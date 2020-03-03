@@ -1,0 +1,137 @@
+.naranja {
+  color: #ffb057; }
+
+.fira {
+  font-family: 'Fira Mono'; }
+
+.mayus {
+  text-transform: uppercase; }
+
+body {
+  font-family: 'Raleway';
+  background: white;
+  color: black;
+  border-radius: 0;
+  border: none; }
+
+header {
+  padding: 0;
+  margin: 0; }
+
+.bold {
+  font-weight: bold; }
+
+.site-header {
+  background: transparent; }
+
+.navbar {
+  padding: 1.5rem 1rem; }
+
+.logo-submit {
+  width: 30px;
+  height: auto;
+  display: block; }
+
+.navbar-toggler {
+  border: none;
+  border-radius: 0;
+  padding: 0; }
+
+h1 {
+  color: red;
+  border: none; }
+
+.banner-main {
+  background: black;
+  height: 350px;
+  width: 100%;
+  background: url(../images/fondo_inicio.png) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column;
+  margin-top: -50px; }
+  .banner-main h1 {
+    font-size: 2em;
+    text-align: center;
+    color: white; }
+  .banner-main h2 {
+    font-size: 1.2em;
+    text-align: center;
+    color: white; }
+
+.btn-servicios {
+  background: #ffb057;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 190px;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 20px; }
+
+.hello {
+  margin: 30px 0 50px 0; }
+  .hello .lets-build {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffb057; }
+  .hello .intro {
+    font-size: 1.3em;
+    text-align: center; }
+  .hello .desarrollamos {
+    text-align: center; }
+
+.service {
+  margin-bottom: 30px; }
+  .service .inner-container {
+    width: 99%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    -webkit-box-shadow: 0px 0px 10px 5px #cccccc;
+    -moz-box-shadow: 0px 0px 10px 5px #cccccc;
+    box-shadow: 0px 0px 10px 5px #cccccc;
+    border-bottom: 4px solid #003748; }
+  .service .title {
+    margin-bottom: 10px !important;
+    text-align: left;
+    font-weight: bold; }
+  .service .description {
+    margin-bottom: 20px; }
+  .service .ver-mas a {
+    color: black; }
+
+@media screen and (min-width: 768px) {
+  .the-content.container {
+    margin-top: 50px; }
+  .hello {
+    margin-top: 0; }
+  .service .title {
+    font-size: 1.8em; } }
+
+@media screen and (min-width: 1200px) {
+  .banner-main {
+    height: 550px; }
+    .banner-main h1 {
+      font-size: 3.4em; }
+    .banner-main h2 {
+      font-size: 2.2em; }
+  .btn-servicios {
+    font-size: 1.4em; }
+  .middle-aligner {
+    display: flex;
+    align-items: center; }
+  .hello .naranja {
+    text-align: left;
+    font-size: 1.4em; }
+  .hello .intro {
+    text-align: left;
+    font-size: 1.9em; }
+  .hello .desarrollamos {
+    text-align: left;
+    font-size: 1.4em; }
+  .hello .text-center {
+    text-align: left;
+    font-size: 1.4em;
+    float: left; } }
