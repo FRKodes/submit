@@ -50,4 +50,4 @@
 	</div>
 </div>
 
-<main class="container"><!-- start the page containter -->
+<main class="container_"><!-- start the page containter -->

@@ -1,5 +1,29 @@
+.mt-10 {
+  margin-top: 10px; }
+
+.mt-30 {
+  margin-top: 30px; }
+
+.mt-50 {
+  margin-top: 50px; }
+
+.mb-10 {
+  margin-bottom: 10px; }
+
+.mb-30 {
+  margin-bottom: 30px; }
+
+.mb-50 {
+  margin-bottom: 50px; }
+
+.back-blue {
+  background-color: #013a4d; }
+
 .naranja {
   color: #ffb057; }
+
+.white {
+  color: white; }
 
 .fira {
   font-family: 'Fira Mono'; }
@@ -92,7 +116,12 @@ h1 {
     -webkit-box-shadow: 0px 0px 10px 5px #cccccc;
     -moz-box-shadow: 0px 0px 10px 5px #cccccc;
     box-shadow: 0px 0px 10px 5px #cccccc;
-    border-bottom: 4px solid #003748; }
+    border-bottom: 4px solid #003748;
+    transition: all .5s ease; }
+    .service .inner-container:hover {
+      width: 100%;
+      transition: all .2s ease;
+      border-bottom: 4px solid #ffb057; }
   .service .title {
     margin-bottom: 10px !important;
     text-align: left;
@@ -102,13 +131,113 @@ h1 {
   .service .ver-mas a {
     color: black; }
 
+.services-list li {
+  display: inline-block;
+  margin: 5px; }
+  .services-list li a {
+    padding: 5px 10px;
+    color: white;
+    font-size: .8em; }
+    .services-list li a.active {
+      background-color: #ffb057; }
+
+.portfolio .block-50 {
+  width: 100%;
+  display: inline-block;
+  float: left; }
+  .portfolio .block-50 .project {
+    width: 100%;
+    height: 200px;
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px; }
+
+input.form-control {
+  border-radius: 0;
+  border: none;
+  background-color: #eeeeee;
+  padding: 10px; }
+
+textarea.form-control {
+  resize: none;
+  border-radius: 0;
+  border: none;
+  background-color: #eeeeee;
+  padding: 10px; }
+
+input[type="submit"].btn-enviar-mail {
+  background-color: #ffb057;
+  color: white;
+  border-radius: 25px; }
+
+#map {
+  background-color: purple;
+  margin: 0;
+  height: 250px; }
+
+footer {
+  text-align: center;
+  padding-bottom: 0; }
+
+.site-footer {
+  background-color: #013a4d;
+  padding: 30px 0; }
+
+.social-links-footer {
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center; }
+  .social-links-footer li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 50%; }
+    .social-links-footer li img {
+      height: 20px;
+      width: auto;
+      display: block; }
+
 @media screen and (min-width: 768px) {
   .the-content.container {
     margin-top: 50px; }
   .hello {
     margin-top: 0; }
   .service .title {
-    font-size: 1.8em; } }
+    font-size: 1.8em; }
+  .portfolio {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between; }
+    .portfolio .block-50 {
+      width: 49%;
+      display: inline-block;
+      float: left; }
+      .portfolio .block-50 .project {
+        width: 100%;
+        height: 315px;
+        display: block;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-bottom: 20px; }
+        .portfolio .block-50 .project._25 {
+          height: 150px;
+          width: 47.5%;
+          margin: 0 1% 15px 1%;
+          display: inline-block; }
+      .portfolio .block-50.second-one {
+        background-color: transparent; }
+  textarea.form-control {
+    margin-top: 10px; }
+  #map {
+    height: 450px; } }
 
 @media screen and (min-width: 1200px) {
   .banner-main {
@@ -134,4 +263,27 @@ h1 {
   .hello .text-center {
     text-align: left;
     font-size: 1.4em;
-    float: left; } }
+    float: left; }
+  .services-list {
+    margin-top: 20px; }
+    .services-list li {
+      display: inline-block;
+      margin: 5px; }
+      .services-list li a {
+        padding: 10px 15px;
+        color: white;
+        font-size: 1.2em; }
+        .services-list li a.active {
+          background-color: #ffb057; }
+  .portfolio .block-50 {
+    width: 49.5%;
+    display: inline-block;
+    float: left; }
+    .portfolio .block-50 .project {
+      width: 100%;
+      height: 540px; }
+      .portfolio .block-50 .project._25 {
+        height: 260px;
+        margin-bottom: 20px; }
+  h2.title-contact {
+    font-size: 3em; } }

@@ -1,8 +1,27 @@
 $naranja: #ffb057
 $azul: #003748
+$azul-fondo: #013a4d
+$gris: #eeeeee
 
+.mt-10
+	margin-top: 10px
+.mt-30
+	margin-top: 30px
+.mt-50
+	margin-top: 50px
+.mb-10
+	margin-bottom: 10px
+.mb-30
+	margin-bottom: 30px
+.mb-50
+	margin-bottom: 50px
+
+.back-blue
+	background-color: $azul-fondo
 .naranja
 	color: $naranja
+.white
+	color: white
 .fira
 	font-family: 'Fira Mono'
 .mayus
@@ -82,6 +101,11 @@ h1
 		-moz-box-shadow: 0px 0px 10px 5px rgba(204,204,204,1)
 		box-shadow: 0px 0px 10px 5px rgba(204,204,204,1)
 		border-bottom: 4px solid $azul
+		transition: all .5s ease
+		&:hover
+			width: 100%
+			transition: all .2s ease
+			border-bottom: 4px solid $naranja
 	.title
 		margin-bottom: 10px !important
 		text-align: left
@@ -91,6 +115,73 @@ h1
 	.ver-mas
 		a
 			color: black
+.services-list
+	li
+		display: inline-block
+		margin: 5px
+		a
+			padding: 5px 10px
+			color: white
+			font-size: .8em
+			&.active
+				background-color: $naranja
+.portfolio
+	.block-50
+		width: 100%
+		display: inline-block
+		float: left
+		.project
+			width: 100%
+			height: 200px
+			display: block
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			margin-bottom: 20px
+input.form-control
+	border-radius: 0
+	border: none
+	background-color: $gris
+	padding: 10px
+textarea.form-control
+	resize: none
+	border-radius: 0
+	border: none
+	background-color: $gris
+	padding: 10px
+input[type="submit"]
+	&.btn-enviar-mail
+		background-color: $naranja
+		color: white
+		border-radius: 25px
+#map
+	background-color: purple
+	margin: 0
+	height: 250px
+footer
+	text-align: center
+	padding-bottom: 0
+.site-footer
+	background-color: $azul-fondo
+	padding: 30px 0
+.social-links-footer
+	margin: 0 0 20px 0
+	display: flex
+	flex-flow: row
+	justify-content: center
+	li
+		display: flex
+		justify-content: center
+		align-items: center
+		margin: 0 10px
+		width: 40px
+		height: 40px
+		background-color: gray
+		border-radius: 50%
+		img
+			height: 20px
+			width: auto
+			display: block
 @media screen and (min-width: 768px)
 	.the-content.container
 		margin-top: 50px
@@ -99,6 +190,33 @@ h1
 	.service
 		.title
 			font-size: 1.8em
+	.portfolio
+		display: flex
+		justify-content: space-between
+		align-content: space-between
+		.block-50
+			width: 49%
+			display: inline-block
+			float: left
+			.project
+				width: 100%
+				height: 315px
+				display: block
+				background-size: cover
+				background-position: center center
+				background-repeat: no-repeat
+				margin-bottom: 20px
+				&._25
+					height: 150px
+					width: 47.5%
+					margin: 0 1% 15px 1%
+					display: inline-block
+			&.second-one
+				background-color: transparent
+	textarea.form-control
+		margin-top: 10px
+	#map
+		height: 450px
 @media screen and (min-width: 1200px)
 	.banner-main
 		height: 550px
@@ -125,3 +243,27 @@ h1
 			text-align: left
 			font-size: 1.4em
 			float: left
+	.services-list
+		margin-top: 20px
+		li
+			display: inline-block
+			margin: 5px
+			a
+				padding: 10px 15px
+				color: white
+				font-size: 1.2em
+				&.active
+					background-color: $naranja
+	.portfolio
+		.block-50
+			width: 49.5%
+			display: inline-block
+			float: left
+			.project
+				width: 100%
+				height: 540px
+				&._25
+					height: 260px
+					margin-bottom: 20px
+	h2.title-contact
+		font-size: 3em
