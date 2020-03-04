@@ -1,6 +1,3 @@
-console.log('ready!');
-console.log('okay');
-
 /*-------------------------------
 	VALIDATE.JS
 	A barebones jQuery validation plugin
@@ -15,19 +12,19 @@ m),c=this,q=["checkGroupRequired","checkGroupMin","checkGroupMax"];c.$form=f;c.v
 function(a){a=d("[data-validate]",a===l?c.$form:a);h.autoDetect&&(a=d("input[required]").add(a));return a};c.checkRequired=function(a){return 0<a.val().length?!0:!1};c.checkRequiredCheckbox=function(a){return a.is(":checked")};c.checkGroupRequired=function(a){return a.filter(":checked").length?!0:!1};c.checkGroupMin=function(a,b){return a.filter(":checked").length>=b};c.checkGroupMax=function(a,b){return a.filter(":checked").length<=b};c.checkCustomRegExp=function(a,b,c){if(""===a.val())return!0;
 b=RegExp(b,c);return a.val().match(b)?!0:!1};c.checkRegExp=function(a,b){return a.val().match(h.regExp[b])?!0:!1};c.checkMaxLength=function(a,b){return""===a.val()?!0:a.val().length<=b};c.checkMinLength=function(a,b){return""===a.val()?!0:a.val().length>=b};c.checkMax=function(a,b){return""===a.val()?!0:parseFloat(a.val())<=parseFloat(b)};c.checkMin=function(a,b){return""===a.val()?!0:parseFloat(a.val())>=parseFloat(b)}}})(window,jQuery);
 
-$(function(){
+jQuery(function(){
 
 	var formSettings = {
 		singleError : function($field, rules){ 
 			$field.closest('.form-group').removeClass('valid').addClass('error');
-			$('.text-danger').fadeIn();
+			jQuery('.text-danger').fadeIn();
 		},
 		singleSuccess : function($field, rules){ 
 			$field.closest('.form-group').removeClass('error').addClass('valid');
-			$('.text-danger').fadeOut();
+			jQuery('.text-danger').fadeOut();
 		},
 		overallSuccess : function(){
-			var form    	= $('#contactForm'),
+			var form    	= jQuery('#contactForm'),
 				nombre			= form.find( "input[name='nombre']").val(),
 				email			= form.find( "input[name='email']").val(),
 				asunto			= form.find( "input[name='asunto']").val(),
@@ -35,19 +32,29 @@ $(function(){
 				action			= form.attr( "action"),
 				url				= action;
 
-			var posting = $.post(
+			var posting = jQuery.post(
 				url, { nombre: nombre, email: email, mensaje: mensaje, asunto: asunto }
 			);
 			
 			posting.done(function( data ){
-				$('#contactForm')[0].reset();
-				$('.sent_mail_alert').fadeIn().delay(3000).fadeOut();
+				jQuery('#contactForm')[0].reset();
+				jQuery('.sent_mail_alert').fadeIn().delay(3000).fadeOut();
 				console.log('contact email sent: ' + data + ' - ');
-
 			});
 		},
 		overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
 			autoDetect : true, debug : true
 		};
-	var $validate = $('#contactForm').validate(formSettings).data('validate');
+	var $validate = jQuery('#contactForm').validate(formSettings).data('validate');
 });
+
+jQuery('.ver-mas-link').on('click', function () {
+	var element_id= jQuery(this).attr('id');
+	jQuery('.text-' + element_id).toggleClass('hidden');
+	console.log(element_id);
+});
+
+// jQuery('a.btn-to-contact').on('click', function () {
+// 	document.getElementById('#contact-block').scrollIntoView();
+// });
+

@@ -12,8 +12,8 @@
 		<div class="row">
 			<div class="col-xs-12 col-md-8 col-lg-4 ml-auto mr-auto">
 				<ul class="social-links-footer">
-					<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg" alt="link facebook"></a></li>
-					<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg" alt="link instagram"></a></li>
+					<li><a href="https://www.facebook.com/SubmitCommunication/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg" alt="link facebook"></a></li>
+					<li><a href="https://www.instagram.com/submitcommunication/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg" alt="link instagram"></a></li>
 				</ul>
 				<p class="text-center white">
 					TODOS LOS DERECHOS RESERVADOS SUBMIT COMMUNICATION
@@ -24,6 +24,10 @@
 		</div>
 	</div><!-- .site-info -->
 </footer><!-- #colophon .site-footer -->
+
+<div class="to-top">
+	<a href="#masthead"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/flecha_to_top.png" alt="flecha to top"></a>
+</div>
 
 <?php wp_footer(); ?>
 <script>

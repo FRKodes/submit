@@ -49,14 +49,19 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 	<div class="row">
 		<div class="col-xs-12 col-md-10 ml-auto mr-auto portfolio mb-20">
-			<div class="block-50 first-one">
-				<div class="project" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/prod-audiovisual-1.jpg);"></div>
+			<div class="block-50 first-one"><?php
+				$args = array( 'post_type' => 'proyecto', 'posts_per_page' => 1 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<div class="project" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div> <?php 
+				endwhile;?>
 			</div>
-			<div class="block-50 second-one">
-				<div class="project _25" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/mkt-1.jpg);"></div>
-				<div class="project _25" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/diseno-web-1.jpg);"></div>
-				<div class="project _25" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/diseno-grafico-1.png);"></div>
-				<div class="project _25" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/branding-1.jpg);"></div>
+			<div class="block-50 second-one"><?php
+				$args = array( 'post_type' => 'proyecto', 'posts_per_page' => 4, 'offset' => 1 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<div class="project _25" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div> <?php 
+				endwhile;?>
 			</div>
 		</div>
 
@@ -68,7 +73,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	</div>
 </div>
 
-<div class="container">
+<div class="container" id="contact-block">
 	<div class="row">
 		<div class="col-xs-12 col-md-10 mr-auto ml-auto mt-50 text-center">
 			<h2 class="title-contact bold">¿QUIERES TRABAJAR CON NOSOTROS?</h2>
@@ -76,32 +81,39 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		</div>
 	</div>
 
-	<form action="" method="post" class="mt-30 mb-50">
+	<form action="/sendmail" method="post" class="mt-30 mb-50" id="contactForm">
 		<div class="row">	
 			<div class="col-xs-12 col-md-4 col-lg-3 ml-auto">
 				<div class="form-group">
-					<input type="text" name="nombre" class="form-control" placeholder="Nombre">
+					<input type="text" name="nombre" class="form-control" placeholder="Nombre" data-validate="required">
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-4 col-lg-3">
 				<div class="form-group">
-					<input type="text" name="email" class="form-control" placeholder="Correo Electrónico">
+					<input type="text" name="email" class="form-control" placeholder="Correo Electrónico" data-validate="required|email">
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-4 col-lg-3 mr-auto">
 				<div class="form-group">
-					<input type="text" name="asunto" class="form-control" placeholder="Asunto">
+					<input type="text" name="asunto" class="form-control" placeholder="Asunto" data-validate="required">
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12 col-md-12 col-lg-9 ml-auto mr-auto">
+				<div class="text-danger">Los datos con * son obligatorios</div>
 				<div class="form-group">
-					<textarea name="mensaje" class="form-control" id="mensaje" cols="30" rows="10" placeholder="Escribe tu Mensaje"></textarea>
+					<textarea name="mensaje" class="form-control" id="mensaje" cols="30" rows="10" placeholder="Escribe tu Mensaje"></textarea data-validate="required">
 				</div>
 				<div class="form-group text-center">
 					<input type="submit" class="btn-enviar-mail fira" value="ENVIAR">
+					<div class="sent_mail_alert text-center">
+						<p>
+							<b>¡Gracias!</b><br>
+							Tu correo ha sido enviado correctamente, nos pondremos en contacto contigo a la brevedad.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

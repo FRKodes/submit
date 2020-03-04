@@ -43,6 +43,56 @@ function naked_scripts()  {
 	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/assets/css/submit-styles.css');
 	wp_enqueue_script( 'naked-fitvid', get_template_directory_uri() . '/assets/js/jquery.fitvids.js', array( 'jquery' ), NAKED_VERSION, true );
 	wp_enqueue_script( 'naked', get_template_directory_uri() . '/assets/js/theme.min.js', array(), NAKED_VERSION, true );
-  
+	wp_enqueue_script( 'submit-js', get_template_directory_uri() . '/assets/js/app.js', array(), array(), true );
 }
 add_action( 'wp_enqueue_scripts', 'naked_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
+
+
+add_action( 'init', 'create_submit_project' );
+
+function create_submit_project() {
+    register_post_type( 'proyecto',
+        array(
+            'labels' => array(
+                'name' => 'Proyectos',
+                'singular_name' => 'Proyecto',
+                'add_new' => 'Agregar nuevo',
+                'add_new_item' => 'Agregar nuevo Proyecto',
+                'edit' => 'Editar',
+                'edit_item' => 'Editar Proyecto',
+                'new_item' => 'Nueva Proyecto',
+                'view' => 'Ver',
+                'view_item' => 'Ver Proyecto',
+                'search_items' => 'Buscar Proyecto',
+                'not_found' => 'No se encontró el Proyecto',
+                'not_found_in_trash' => 'No se encontró el Proyecto en la papelera',
+                'parent' => 'Proyecto padre'
+            ),
+ 
+            'public' => true,
+            'menu_position' => 15,
+            'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+            'taxonomies' => array( '' ),
+            'has_archive' => true
+        )
+    );
+}
+
+add_action( 'init', 'create_project_taxonomies', 0 );
+
+function create_project_taxonomies() {
+    register_taxonomy(
+        'categoria',
+        'proyecto',
+        array(
+            'labels' => array(
+                'name' => 'Categorías',
+                'add_new_item' => 'Agregar Nueva categoría',
+                'new_item_name' => "Nueva Categoría"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true
+        )
+    );
+}

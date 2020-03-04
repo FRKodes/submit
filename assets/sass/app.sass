@@ -154,10 +154,32 @@ input[type="submit"]
 		background-color: $naranja
 		color: white
 		border-radius: 25px
+.form-group
+	position: relative
+.form-group.error
+	input.form-control
+		border: 1px solid rgba(red, .6)
+		transition: all .5s ease
+.text-danger
+	display: none
+.sent_mail_alert
+	background-color: $naranja
+	color: white
+	padding: 30px 20px
+	width: 100%
+	bottom: 80px
+	position: absolute
+	font-size: 1.2em
+	display: none
 #map
-	background-color: purple
+	background-color: #EEEEEE
 	margin: 0
 	height: 250px
+.more-text
+	height: auto
+	&.hidden
+		height: 0px
+		overflow: hidden
 footer
 	text-align: center
 	padding-bottom: 0
@@ -182,6 +204,18 @@ footer
 			height: 20px
 			width: auto
 			display: block
+.to-top
+	width: 40px
+	height: auto
+	display: block
+	position: fixed
+	right: 20px
+	bottom: 160px
+	z-index: 10
+	img
+		width: 100%
+		height: auto
+		display: block
 @media screen and (min-width: 768px)
 	.the-content.container
 		margin-top: 50px
@@ -215,8 +249,15 @@ footer
 				background-color: transparent
 	textarea.form-control
 		margin-top: 10px
+	.sent_mail_alert
+		padding: 30px 120px
+		font-size: 1.4em
 	#map
 		height: 450px
+	.to-top
+		width: 50px
+		right: 30px
+		bottom: 130px
 @media screen and (min-width: 1200px)
 	.banner-main
 		height: 550px
@@ -267,3 +308,10 @@ footer
 					margin-bottom: 20px
 	h2.title-contact
 		font-size: 3em
+	.sent_mail_alert
+		padding: 40px 200px
+		font-size: 1.5em
+	.to-top
+		width: 60px
+		right: 40px
+		bottom: 135px

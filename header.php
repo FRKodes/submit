@@ -44,7 +44,7 @@
 			<h1>SOMOS SUBMIT COMMUNICATION</h1>
 			<h2><span class="bold">Comunicar es conectar,</span> & conectar es trascender</h2>
 			<div class="btn-container">
-				<a href="#" class="btn-servicios">NUESTROS SERVICIOS</a>
+				<a href="#primary" class="btn-servicios">NUESTROS SERVICIOS</a>
 			</div>
 		</div>
 	</div>
