@@ -38,46 +38,32 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 			<p class="fira">Tu tienes la visión, nosotros la solución.</p>
 			<h2 class="job-title">ALGO DE NUESTRO TRABAJO</h2>
 			<ul class="services-list">
-				<li><a class="active" href="#">TODO</a></li>
-				<li><a href="#">DISEÑO WEB</a></li>
-				<li><a href="#">DISEÑO GRÁFICO</a></li>
-				<li><a href="#">RELACIONES PÚBLICAS</a></li>
-				<li><a href="#">FOTOGRAFÍA</a></li>
+				<li><a data-activate="more-projects-todo" class="active" href="javascript: void(0)">TODO</a></li>
+				<li><a data-activate="more-projects-branding" href="javascript: void(0)">BRANDING</a></li>
+				<li><a data-activate="more-projects-diseno" href="javascript: void(0)">DISEÑO GRÁFICO</a></li>
+				<li><a data-activate="more-projects-audiovisual" href="javascript: void(0)">AUDIOVISUALES</a></li>
+				<li><a data-activate="more-projects-mkt" href="javascript: void(0)">MKT DIGITAL</a></li>
+				<li><a data-activate="more-projects-rp" href="javascript: void(0)">RRPP</a></li>
+				<li><a data-activate="more-projects-web" href="javascript: void(0)">DISEÑO WEB</a></li>
 			</ul>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-xs-12 col-md-10 ml-auto mr-auto portfolio mb-20">
-			<div class="block-50 first-one"><?php
-				$args = array( 'post_type' => 'proyecto', 'posts_per_page' => 1 );
-				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					<div class="project" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div> <?php 
-				endwhile;?>
-			</div>
-			<div class="block-50 second-one"><?php
-				$args = array( 'post_type' => 'proyecto', 'posts_per_page' => 4, 'offset' => 1 );
-				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					<div class="project _25" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div> <?php 
-				endwhile;?>
-			</div>
-		</div>
-
-		<div class="col-xs-12 col-md-12">
-			<p class="text-center">
-				<a href="" class="btn-servicios fira">VER MÁS</a> <br><br><br>
-			</p>
-		</div>
-	</div>
+	<?php include 'partials/block-projects-all.php'; ?>
+	<?php include 'partials/block-projects-web.php'; ?>
+	<?php include 'partials/block-projects-diseno.php'; ?>
+	<?php include 'partials/block-projects-rp.php'; ?>
+	<?php include 'partials/block-projects-audiovisual.php'; ?>
+	<?php include 'partials/block-projects-branding.php'; ?>
+	<?php include 'partials/block-projects-mkt.php'; ?>
+	
 </div>
 
 <div class="container" id="contact-block">
 	<div class="row">
 		<div class="col-xs-12 col-md-10 mr-auto ml-auto mt-50 text-center">
-			<h2 class="title-contact bold">¿QUIERES TRABAJAR CON NOSOTROS?</h2>
-			<p class="fira">CONTÁCTANOS</p>
+			<h2 class="title-contact bold">¿QUIERES SABER MÁS DE NOSOTROS?</h2>
+			<p class="fira">LET’S BUILD SOMETHING AMAZING TOGETHER</p>
 		</div>
 	</div>
 

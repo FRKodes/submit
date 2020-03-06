@@ -18,7 +18,8 @@ gulp.task('concat', () => {
   return gulp.src([
 			'./assets/css/base.css',
 			'./assets/css/00-bootstrap.css',
-			'./assets/css/app.css'])
+			'./assets/css/lightbox.css',
+      './assets/css/app.css'])
     .pipe(concat('/assets/css/submit-styles.css'))
     .pipe(gulp.dest('./'));
 });
@@ -28,7 +29,8 @@ gulp.task('concat-js', () => {
   return gulp.src([
 			'./assets/js/jquery.js',
 			'./assets/js/bootstrap.js',
-			'./assets/js/app.js'])
+			'./assets/js/lightbox.js',
+      './assets/js/app.js'])
     .pipe(concat('submit-scripts.js'))
     .pipe(gulp.dest('./assets/js/'));
 });

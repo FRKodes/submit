@@ -16,8 +16,9 @@
 					<li><a href="https://www.instagram.com/submitcommunication/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg" alt="link instagram"></a></li>
 				</ul>
 				<p class="text-center white">
-					TODOS LOS DERECHOS RESERVADOS SUBMIT COMMUNICATION
-					<br>
+					Dirección: David H. Lawrence #5170 <br>Col. Jardines Universidad. Zapopan, Jalisco. <br>
+					<a class="white" href="mailto:contacto@submit.com.mx">contacto@submit.com.mx</a> <br><br>
+					TODOS LOS DERECHOS RESERVADOS SUBMIT COMMUNICATION<br>
 					<a href="/aviso-de-privacidad" class="white">AVISO DE PRIVACIDAD</a>
 				</p>
 			</div>

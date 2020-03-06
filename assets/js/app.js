@@ -54,7 +54,27 @@ jQuery('.ver-mas-link').on('click', function () {
 	console.log(element_id);
 });
 
-// jQuery('a.btn-to-contact').on('click', function () {
-// 	document.getElementById('#contact-block').scrollIntoView();
-// });
+jQuery('#ver-mas-proyectos').on('click', function () {
+	jQuery('#ver-mas-proyectos').hide();
+	jQuery('.more-projects').addClass('show-more-projects');
+	console.log('mostrar más!');
+});
+
+jQuery('.services-list li a').on('click', function () {
+	var current_value = jQuery(this).attr('data-activate');
+	console.log(current_value);
+	jQuery('.more-portfolio').hide();
+	jQuery('.more-projects.show-more-projects').hide();
+	jQuery('.services-list li a').removeClass('active');
+	jQuery(this).addClass('active');
+	if (current_value === 'more-projects-todo') {
+		jQuery('.show-more-projects').css('height','auto');
+		jQuery('#ver-mas-proyectos').hide();
+		
+	}
+	jQuery('.' + current_value).show();
+});
+
+
+
 

@@ -116,6 +116,8 @@ h1
 		a
 			color: black
 .services-list
+	padding: 0
+	margin: 0
 	li
 		display: inline-block
 		margin: 5px
@@ -123,8 +125,11 @@ h1
 			padding: 5px 10px
 			color: white
 			font-size: .8em
+			background-color: transition
+			transition: all 1s ease
 			&.active
 				background-color: $naranja
+				transition: all .5s ease
 .portfolio
 	.block-50
 		width: 100%
@@ -138,6 +143,10 @@ h1
 			background-position: center center
 			background-repeat: no-repeat
 			margin-bottom: 20px
+			a
+				width: 100%
+				height: 100%
+				display: block
 input.form-control
 	border-radius: 0
 	border: none
@@ -204,6 +213,33 @@ footer
 			height: 20px
 			width: auto
 			display: block
+.more-projects
+	height: 0px
+	overflow: hidden
+	transition: all .5s ease
+	&.show-more-projects
+		height: auto
+		margin-top: -60px
+		transition: all .5s ease
+.more-portfolio
+	display: none
+	&.more-projects-todo
+		display: block
+	.portfolio
+		.block-projects-container
+			width: 100%
+			height: auto
+			.project
+				a
+					width: 100%
+					height: 100%
+					display: block
+				&._25
+					width: 100%
+					height: 200px
+					display: inline-block
+					background-size: cover
+					margin-bottom: 15px
 .to-top
 	width: 40px
 	height: auto
@@ -258,6 +294,14 @@ footer
 		width: 50px
 		right: 30px
 		bottom: 130px
+	.more-portfolio
+		.portfolio
+			.block-projects-container
+				.project
+					&._25
+						width: 49%
+						height: 300px
+						margin-bottom: 15px
 @media screen and (min-width: 1200px)
 	.banner-main
 		height: 550px
@@ -301,11 +345,16 @@ footer
 			display: inline-block
 			float: left
 			.project
-				width: 100%
-				height: 540px
+				width: 99%
+				height: 539px
 				&._25
 					height: 260px
-					margin-bottom: 20px
+					margin: 0 0 15px 0 
+				&._25:nth-child(odd)
+					margin-right: 3%
+				&._25:nth-child(even)
+					margin-right: 0
+					
 	h2.title-contact
 		font-size: 3em
 	.sent_mail_alert
@@ -315,3 +364,11 @@ footer
 		width: 60px
 		right: 40px
 		bottom: 135px
+	.more-portfolio
+		.portfolio
+			.block-projects-container
+				.project
+					&._25
+						width: 47.5%
+						height: 500px
+						margin: 0 1% 25px 1%

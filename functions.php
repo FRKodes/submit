@@ -43,7 +43,7 @@ function naked_scripts()  {
 	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/assets/css/submit-styles.css');
 	wp_enqueue_script( 'naked-fitvid', get_template_directory_uri() . '/assets/js/jquery.fitvids.js', array( 'jquery' ), NAKED_VERSION, true );
 	wp_enqueue_script( 'naked', get_template_directory_uri() . '/assets/js/theme.min.js', array(), NAKED_VERSION, true );
-	wp_enqueue_script( 'submit-js', get_template_directory_uri() . '/assets/js/app.js', array(), array(), true );
+	wp_enqueue_script( 'submit-js', get_template_directory_uri() . '/assets/js/submit-scripts.js', array(), array(), true );
 }
 add_action( 'wp_enqueue_scripts', 'naked_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
 
